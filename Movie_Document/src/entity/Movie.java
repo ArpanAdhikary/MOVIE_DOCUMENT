@@ -1,7 +1,6 @@
 package entity;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -11,8 +10,19 @@ public class Movie {
 	private String movieName,movieGenre,movieDirector;
 	private String language[];
 	private LocalDate date;
-	ArrayList<Object> arr = new ArrayList<>();
-    
+	
+	public Movie(int movieId, String movieName, String movieGenre, String movieDirector, Integer movieLength,
+			String[] language, LocalDate date) {
+		super();
+		this.movieId = movieId;
+		this.movieName = movieName;
+		this.movieGenre = movieGenre;
+		this.movieDirector = movieDirector;
+		this.movieLength = movieLength;
+		this.language = language;
+		this.date = date;
+		}
+
 	public int getMovieId() {
 		return movieId;
 	}
@@ -69,38 +79,10 @@ public class Movie {
 		this.date = date;
 	}
 	
-	public ArrayList<Object> getArr() {
-		return arr;
-	}
-	
-	public void setArr(ArrayList<Object> arr) {
-		this.arr = arr;
-	}
-	
-	
-	
 	public void setMovieId(Integer movieId) {
 		this.movieId = movieId;
 	}
 	
-	public Movie(int movieId, String movieName, String movieGenre, String movieDirector, Integer movieLength,
-			String[] language, LocalDate date) {
-		super();
-		this.movieId = movieId;
-		this.movieName = movieName;
-		this.movieGenre = movieGenre;
-		this.movieDirector = movieDirector;
-		this.movieLength = movieLength;
-		this.language = language;
-		this.date = date;
-		this.arr.add(movieName);
-		this.arr.add(movieGenre);
-		this.arr.add(movieDirector);
-		this.arr.add(movieLength);
-		this.arr.add(language);
-		this.arr.add(date);
-	}
-
 	@Override
 	public String toString() {
 		return "Movie [movieId=" + movieId + ", movieLength=" + movieLength + ", movieName=" + movieName

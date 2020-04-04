@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import entity.Movie;
-import service.MovieService;
+import service.MovieServiceImpl;
 
 public class MovieApp {
 
@@ -17,12 +17,18 @@ public class MovieApp {
 		String movieName,movieGenre,movieDirector;
 		LocalDate movieDate;
 		
+//		System.out.println("Home");
+//		System.out.println("Login");
+//		System.out.println("");
+
 		System.out.println("Enter 1 for admin");
 		System.out.println("Enter 2 for customer");
 		Scanner sc = new Scanner(System.in);
 		int choice = sc.nextInt();
 		
-		MovieService srvc = new MovieService();
+		MovieServiceImpl srvc = new MovieServiceImpl();
+		
+		
 		if(choice==1) {
 			while(ch!=7) {
 				System.out.println("Press 1: for add Movie");
@@ -35,7 +41,6 @@ public class MovieApp {
 				ch=sc.nextInt();
 				switch(ch) {
 				case 1:
-				
 					System.out.println(" Enter Movie Id");
 					movieId=sc.nextInt();
 					System.out.println("Enter Movie Name");
