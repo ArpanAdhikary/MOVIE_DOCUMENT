@@ -2,12 +2,21 @@ package entity;
 
 public class Seat {
 
+	
 	private Integer seatId;
 	private enum  seatStatus {Available,Blocked,Booked };
 	private Double seatPrice;
+	
+	public Seat(Integer seatId, Double seatPrice) {
+		super();
+		this.seatId = seatId;
+		this.seatPrice = seatPrice;
+	}
+
 	public Integer getSeatId() {
 		return seatId;
 	}
+
 	public void setSeatId(Integer seatId) {
 		this.seatId = seatId;
 	}

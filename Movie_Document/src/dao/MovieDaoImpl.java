@@ -13,7 +13,7 @@ public class MovieDaoImpl implements MovieDao{
 		super();
 	}
 	@Override
-	public boolean addMovieDao(Movie movie) {
+	public Movie addMovieDao(Movie movie) {
 		arr.add(movie.getMovieName());
 		arr.add(movie.getMovieGenre());
 		arr.add(movie.getMovieDirector());
@@ -21,7 +21,7 @@ public class MovieDaoImpl implements MovieDao{
 		arr.add(movie.getLanguage());
 		arr.add(movie.getDate());
 		movieList.put(movie.getMovieId(), arr);
-		return true;	
+		return movie;	
     }
 	@Override
 	public boolean deleteMovie(Integer movieId) {
